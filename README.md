@@ -68,3 +68,5 @@
 - belongs_to :buy_users
 
 
+
+
