@@ -71,8 +71,3 @@
 
 - belongs_to :buy_item
 - belongs_to :sell_item
-
-
-
-
-
