@@ -50,3 +50,5 @@
 - belongs_to :sell_user
 
 
+
+
