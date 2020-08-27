@@ -1,24 +1,71 @@
-# README
+## sell_users テーブル
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+| Column          | Type   | Options     |
+| --------------  | ------ | ----------- |
+| name            | string | null: false |
+| email           | string | null: false |
+| password        | string | null: false |
+| first_name      | string | null: false |
+| last_name       | string | null: false |
+| first_name_kana | string | null: false |
+| last_name_kana  | string | null: false |
+| birthday 1      | string | null: false |
+| birthday 2      | string | null: false |
+| birthday 3      | string | null: false |
+| address         | string | null: false |
 
-Things you may want to cover:
+### Association
 
-* Ruby version
+- has_many :photos
 
-* System dependencies
 
-* Configuration
+## sell_items テーブル
 
-* Database creation
+| Column            | Type   | Options     |
+| ----------------- | ------ | ----------- |
+| user_id           | string | null: false |
+| item_id           | string | null: false |
 
-* Database initialization
 
-* How to run the test suite
+### Association
 
-* Services (job queues, cache servers, search engines, etc.)
+- belongs_to :sell_users
 
-* Deployment instructions
 
-* ...
+## buy_users テーブル
+
+
+| Column          | Type   | Options     |
+| --------------  | ------ | ----------- |
+| name            | string | null: false |
+| email           | string | null: false |
+| password        | string | null: false |
+| first_name      | string | null: false |
+| last_name       | string | null: false |
+| first_name_kana | string | null: false |
+| last_name_kana  | string | null: false |
+| birthday 1      | string | null: false |
+| birthday 2      | string | null: false |
+| birthday 3      | string | null: false |
+| credit_card     | string | null: false |
+
+### Association
+
+- has_one :items
+
+## buy_items テーブル
+
+| Column        | Type       | Options                        |
+| ------------  | ---------- | ------------------------------ |
+| title         | string     | null: false                    |
+| content       | string     | null: false                    |
+| category      | string     | null: false                    |
+| price         | string     | null: false                    |
+| buy_user_id   | string     | null: false                    |
+
+### Association
+
+- belongs_to :buy_users
+
+
+
