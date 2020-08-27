@@ -43,7 +43,7 @@
 | price         | string     | null: false                    |
 | address       | string     | null: false                    |
 | credit_card   | string     | null: false                    |
-| buy_user_id   | string     | null: false                    |
+| buy_user_id   | integer    | null: false                    |
 
 ### Association
 
