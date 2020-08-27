@@ -14,8 +14,9 @@
 
 ### Association
 
-- has_many :sell_items
 - has_one :buy_item
+- has_one :address
+- has_many :sell_items
 
 
 
@@ -26,10 +27,12 @@
 | sell_user_id      | integer | null: false |
 | buy_item_id       | integer | null: false |
 
-
 ### Association
 
 - belongs_to :sell_user
+- belongs_to :buy_item
+- has_many :address_sell_items
+- has_many :addresses, through: :address_sell_items
 
 
 
@@ -41,10 +44,63 @@
 | content       | string     | null: false                    |
 | category      | string     | null: false                    |
 | price         | string     | null: false                    |
-| address       | string     | null: false                    |
 | credit_card   | string     | null: false                    |
-| buy_user_id   | string     | null: false                    |
+| sell_user_id  | integer    | null: false                   |
 
 ### Association
 
 - belongs_to :sell_user
+- belongs_to :sell_item
+- has_many :address_buy_items
+- has_many :addresses, through: :address_buy_items
+
+
+
+## address テーブル
+
+| Column        | Type       | Options                        |
+| ------------  | ---------- | ------------------------------ |
+| postal_code   | string     | null: false                    |
+| prefecture    | string     | null: false                    |
+| city          | string     | null: false                    |
+| address_other | string     | null: false                    |
+| building_name | string     | null: false                    |
+| telephone_num | string     | null: false                    |
+
+### Association
+
+- belongs_to :sell_users
+- has_many :address_buy_items
+- has_many :buy_items, through: :address_buy_items
+- has_many :address_sell_items
+- has_many :sell_items, through: :address_sell_items
+
+
+
+## address_buy_items テーブル
+
+| Column        | Type       | Options                        |
+| ------------  | ---------- | ------------------------------ |
+| address_id    | integer    | null: false                    |
+| buy_item_id   | integer    | null: false                    |
+
+### Association
+
+- has_many :addresses
+- has_many :buy_items
+
+
+
+## address_sell_items テーブル
+
+| Column        | Type       | Options                        |
+| ------------  | ---------- | ------------------------------ |
+| address_id    | integer    | null: false                    |
+| sell_item_id  | integer    | null: false                   |
+
+### Association
+
+- has_many :addresses
+- has_many :sell_items
+
+
