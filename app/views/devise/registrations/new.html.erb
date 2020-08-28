@@ -8,23 +8,8 @@
     </h1>
   </div>
   <%# インスタンスを渡して、エラー発生時にメッセージが表示されるようにしましょう。%>
-  <%# render 'shared/error_messages', model: f.object %>
+    <%= render 'shared/error_messages', model: f.object %>
   <%# //インスタンスを渡して、エラー発生時にメッセージが表示されるようにしましょう。%>
-  <%# <ul>
-    <li class="error-message">Email can't be blank</li>
-    <li class="error-message">Password can't be blank</li>
-    <li class="error-message">Password Include both letters and numbers</li>
-    <li class="error-message">Nickname can't be blank</li>
-    <li class="error-message">Birth date can't be blank</li>
-    <li class="error-message">First name can't be blank</li>
-    <li class="error-message">First name Full-width characters</li>
-    <li class="error-message">Last name can't be blank</li>
-    <li class="error-message">Last name Full-width characters</li>
-    <li class="error-message">First name kana can't be blank</li>
-    <li class="error-message">First name kana Full-width katakana characters</li>
-    <li class="error-message">Last name kana can't be blank</li>
-    <li class="error-message">Last name kana Full-width katakana characters</li>
-  </ul> %>
   <div class="form-group">
     <div class='form-text-wrap'>
       <label class="form-text">ニックネーム</label>
