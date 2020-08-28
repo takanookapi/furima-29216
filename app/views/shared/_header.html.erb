@@ -18,7 +18,7 @@
       <% if user_signed_in? %>
         <div class="user_nav grid-6">
       <%# deviseを導入できたら、ログインの有無で表示が変わるように分岐させましょう%>
-          <%= link_to current_user.nickname, user_session_path, class: "user-nickname"%> 
+          <%= link_to current_user.name, user_session_path, class: "user-nickname"%> 
           <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %>
         </div>
         <% else %>
