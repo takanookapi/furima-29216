@@ -15,3 +15,5 @@ FactoryBot.define do
     last_name_kana { person.last.katakana }
   end
 end
+
+# factories/user.rbはで自分でファイル生成

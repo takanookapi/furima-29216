@@ -104,5 +104,7 @@ RSpec.describe User, type: :model do
 end
 
 # nilと""の違い
-# いつでもコピペ用
+# いつでもテストコード起動のコピペ用
 # bundle exec rspec spec/models/user_spec.rb
+
+# rails g rspec:model user ⬅︎これで作成
