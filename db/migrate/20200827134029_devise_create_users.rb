@@ -48,3 +48,6 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
     # add_index :users, :unlock_token,         unique: true
   end
 end
+
+# HerokuはDBが定期的にリセットされ、画像ファイルが壊れて表示されないので、下記コマンドでDBをリセットする
+# %heroku run DISABLE_DATABASE_ENVIRONMENT_CHECK=1 rails db:drop db:create db:migrate
