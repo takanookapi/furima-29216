@@ -5,11 +5,7 @@ class BuyItemsController < ApplicationController
   end
 
   def new
-    @buy_items = BuyItem.new
-  end
-
-  def new
-    @buy_items = BuyItem.new
+    @buy_item = BuyItem.new
   end
 end
 
