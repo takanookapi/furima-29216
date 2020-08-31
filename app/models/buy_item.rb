@@ -20,6 +20,6 @@ class BuyItem < ApplicationRecord
     validates :shipping_days_id, numericality: { other_than: 1 }
     validates :shipping_fee_id,  numericality: { other_than: 1 }
     validates :shipping_orig_id, numericality: { other_than: 1 }
-    validates :price,   format: { with: /300|\d[0-9]{3,7}/}
+    validates_inclusion_of :price, in: 300..9999999, message: 'out of range'
   end
 end

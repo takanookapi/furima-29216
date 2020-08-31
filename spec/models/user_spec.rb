@@ -6,7 +6,7 @@ RSpec.describe User, type: :model do
       @user = FactoryBot.build(:user)
     end
     # ユーザー新規登録
-    # 新規登録がうまく行く時
+    # 新規登録がうまくいく時
 
     it '全て存在すれば登録できる' do
       expect(@user).to be_valid
@@ -106,5 +106,7 @@ end
 # nilと""の違い
 # いつでもテストコード起動のコピペ用
 # bundle exec rspec spec/models/user_spec.rb
+
+
 
 # rails g rspec:model user ⬅︎これで作成
