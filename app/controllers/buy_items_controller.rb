@@ -2,7 +2,7 @@ class BuyItemsController < ApplicationController
   before_action :move_to_index, except: [:index, :show]
 
   def index
-    @buy_items = BuyItem.all
+    @buy_items = BuyItem.all.order("created_at DESC")
   end
 
   def new
