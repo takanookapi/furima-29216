@@ -1,5 +1,5 @@
 class BuyItemsController < ApplicationController
-  before_action :move_to_index, except: [:index]
+  before_action :move_to_index, except: [:index, :show]
 
   def index
     @buy_items = BuyItem.all
@@ -7,6 +7,10 @@ class BuyItemsController < ApplicationController
 
   def new
     @buy_item = BuyItem.new
+  end
+
+  def show
+    @buy_item = BuyItem.find(params[:id])
   end
 
   def create
@@ -17,6 +21,7 @@ class BuyItemsController < ApplicationController
       render :new
     end
   end
+
 
   private
 
