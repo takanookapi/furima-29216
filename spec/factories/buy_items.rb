@@ -10,10 +10,5 @@ FactoryBot.define do
     price             { Faker::Number.within(range: 300..9_999_999) }
 
     association :user
-
-    # after :image do
-    #   image {File.open('./app/assets/images/aiueo.png')}
-    # end
-    # # trait
   end
 end

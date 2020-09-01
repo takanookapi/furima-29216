@@ -9,12 +9,13 @@ class User < ApplicationRecord
   with_options presence: true do
     validates :name
     validates :date
-    validates :email, uniqueness: { case_sensitive: false },
-                      format: { with: /\A([a-zA-Z0-9])+([a-zA-Z0-9\._-])*@([a-zA-Z0-9_-])+([a-zA-Z0-9\._-]+)+\z/i }
+    validates :email, uniqueness: { case_sensitive: false }
+
+    PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i.freeze
+    validates_format_of :password, with: PASSWORD_REGEX, message: 'には英字と数字の両方を含めて設定してください'
 
     validates :password, confirmation: true,
-                         length: { minimum: 5 },
-                         format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i }
+                         length: { minimum: 5 }
   end
 
   with_options presence: true, format: { with: /\A(?:\p{Hiragana}|\p{Katakana}|[一-龠々])+\z/ } do

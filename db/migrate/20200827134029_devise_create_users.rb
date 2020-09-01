@@ -49,5 +49,4 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
   end
 end
 
-# HerokuはDBが定期的にリセットされ、画像ファイルが壊れて表示されないので、下記コマンドでDBをリセットする
-# %heroku run DISABLE_DATABASE_ENVIRONMENT_CHECK=1 rails db:drop db:create db:migrate
+

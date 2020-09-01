@@ -68,6 +68,18 @@ RSpec.describe BuyItem, type: :model do
       @buy_item.valid?
       expect(@buy_item.errors.full_messages).to include('Price out of range')
     end
+
+    it '価格が300より小さいと登録できない' do
+      @buy_item.price = '299'
+      @buy_item.valid?
+      expect(@buy_item.errors.full_messages).to include('Price out of range')
+    end
+
+    it '価格が10,000,000より大きいと登録できない' do
+      @buy_item.price = '10000000'
+      @buy_item.valid?
+      expect(@buy_item.errors.full_messages).to include('Price out of range')
+    end
   end
 end
 
