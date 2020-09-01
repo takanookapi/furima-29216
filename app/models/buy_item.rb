@@ -16,7 +16,7 @@ class BuyItem < ApplicationRecord
     validates :image
     validates :category_id,      numericality: { other_than: 1 }
     validates :item_status_id,   numericality: { other_than: 1 }
-    validates :shipping_days_id, numericality: { other_than: 1 }
+    validates :shipping_day_id, numericality: { other_than: 1 }
     validates :shipping_fee_id,  numericality: { other_than: 1 }
     validates :shipping_orig_id, numericality: { other_than: 1 }
     validates_inclusion_of :price, in: 300..9_999_999, message: 'out of range'

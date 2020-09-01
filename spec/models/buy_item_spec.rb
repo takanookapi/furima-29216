@@ -58,13 +58,13 @@ RSpec.describe BuyItem, type: :model do
     end
 
     it '発送までの日数が空だと登録できない' do
-      @buy_item.shipping_days_id = '1'
+      @buy_item.shipping_day_id = '1'
       @buy_item.valid?
-      expect(@buy_item.errors.full_messages).to include('Shipping days must be other than 1')
+      expect(@buy_item.errors.full_messages).to include('Shipping day must be other than 1')
     end
 
     it '価格が空だと登録できない' do
-      @buy_item.price = '0'
+      @buy_item.price = ''
       @buy_item.valid?
       expect(@buy_item.errors.full_messages).to include('Price out of range')
     end

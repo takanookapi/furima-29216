@@ -1,12 +1,16 @@
 class BuyItemsController < ApplicationController
-  before_action :move_to_index, except: [:index]
+  before_action :move_to_index, except: [:index, :show]
 
   def index
-    @buy_items = BuyItem.all
+    @buy_items = BuyItem.order("created_at DESC")
   end
 
   def new
     @buy_item = BuyItem.new
+  end
+
+  def show
+    @buy_item = BuyItem.find(params[:id])
   end
 
   def create
@@ -21,7 +25,7 @@ class BuyItemsController < ApplicationController
   private
 
   def buy_item_params
-    params.require(:buy_item).permit(:title, :content, :category_id, :item_status_id, :shipping_days_id, :shipping_fee_id, :shipping_orig_id, :price, :image).merge(user_id: current_user.id)
+    params.require(:buy_item).permit(:title, :content, :category_id, :item_status_id, :shipping_day_id, :shipping_fee_id, :shipping_orig_id, :price, :image).merge(user_id: current_user.id)
   end
 
   def move_to_index
