@@ -22,7 +22,6 @@ class BuyItemsController < ApplicationController
     end
   end
 
-
   private
 
   def buy_item_params
