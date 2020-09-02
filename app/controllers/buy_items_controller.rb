@@ -12,6 +12,15 @@ class BuyItemsController < ApplicationController
   def show
     @buy_item = BuyItem.find(params[:id])
   end
+  
+  def update
+    @buy_item = BuyItem.find(params[:id])
+    if @buy_item.update(buy_item_params)
+      render :show
+    else
+      render :edit
+    end
+  end
 
   def create
     @buy_item = BuyItem.new(buy_item_params)
@@ -22,6 +31,13 @@ class BuyItemsController < ApplicationController
     end
   end
 
+  def edit
+    @buy_item = BuyItem.find(params[:id])
+    unless current_user.id == @buy_item.user_id
+      redirect_to root_path
+    end
+  end
+
   private
 
   def buy_item_params
@@ -29,6 +45,8 @@ class BuyItemsController < ApplicationController
   end
 
   def move_to_index
-    redirect_to new_user_session_path unless user_signed_in?
+    unless user_signed_in?
+      redirect_to new_user_session_path
+    end
   end
 end
