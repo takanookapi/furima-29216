@@ -1,6 +1,6 @@
 class BuyItemsController < ApplicationController
   before_action :move_to_index, except: [:index, :show]
-  before_action :set_buy_item, only: [:show, :update, :edit]
+  before_action :set_buy_item, only: [:destroy, :show, :update, :edit]
 
   def index
     @buy_items = BuyItem.order('created_at DESC')
@@ -12,6 +12,16 @@ class BuyItemsController < ApplicationController
 
   def show
   end
+
+  def destroy
+    redirect_to new_user_session_path unless user_signed_in?
+  if @buy_item.destroy
+    redirect_to root_path
+  else
+    render :show
+  end
+end
+
 
   def update
     if @buy_item.update(buy_item_params)
