@@ -15,13 +15,12 @@ class BuyItemsController < ApplicationController
 
   def destroy
     redirect_to new_user_session_path unless user_signed_in?
-  if @buy_item.destroy
-    redirect_to root_path
-  else
-    render :show
-  end
+    if @buy_item.destroy
+      redirect_to root_path
+    else
+      render :show
+    end
 end
-
 
   def update
     if @buy_item.update(buy_item_params)
