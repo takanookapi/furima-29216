@@ -22,6 +22,7 @@ class BuyItemsController < ApplicationController
   end
 
   def create
+    @buy_item = BuyItem.new(buy_item_params)
     if @buy_item.save
       redirect_to root_path
     else
