@@ -42,7 +42,7 @@ end
   def edit
     redirect_to root_path unless current_user.id == @buy_item.user_id
   end
-
+  
   private
 
   def buy_item_params
