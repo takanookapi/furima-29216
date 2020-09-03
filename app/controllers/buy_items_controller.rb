@@ -30,7 +30,6 @@ class BuyItemsController < ApplicationController
   end
 
   def edit
-    @buy_item = BuyItem.find(params[:id])
     redirect_to root_path unless current_user.id == @buy_item.user_id
   end
 
