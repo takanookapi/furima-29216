@@ -8,6 +8,7 @@ class BuyItem < ApplicationRecord
   belongs_to_active_hash :shipping_orig
 
   belongs_to :user
+  has_one :sell_item
   has_one_attached :image
 
   with_options presence: true do

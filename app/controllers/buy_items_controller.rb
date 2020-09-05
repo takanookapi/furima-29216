@@ -4,8 +4,9 @@ class BuyItemsController < ApplicationController
 
   def index
     @buy_items = BuyItem.order('created_at DESC')
+    @sell_item = SellitemAddress.new(params[:sell_item_id])
   end
-
+  
   def new
     @buy_item = BuyItem.new
   end
