@@ -29,13 +29,19 @@
     <p class='or-text'>or</p>
     <%= link_to '削除', buy_item_path(@buy_item.id), method: :delete, class:'item-destroy' %>
     <%# 商品が売れていない場合はこちらを表示しましょう %>
-  <% elsif user_signed_in? && current_user.id != @buy_item.user_id %>
+  <% end %>
+
+  <% if user_signed_in? && current_user.id != @buy_item.user_id && @buy_item.sell_item == nil %>
     <%= link_to '購入画面に進む', buy_item_sell_items_path(@buy_item.id) ,class:"item-red-btn"%>
-  <% else %>
+  <% else user_signed_in? && @buy_item.sell_item != nil %>
     <%= render "notlogin" %>
   <% end %>
-    <%# //商品が売れていない場合はこちらを表示しましょう %>
 
+  <% unless user_signed_in? %>
+    <%= render "notlogin" %>
+  <% end %>
+
+    <%# //商品が売れていない場合はこちらを表示しましょう %>
     <%# // ログインしているユーザと出品しているユーザが同一人物である時、商品の編集と削除を表示にしましょう %>
 
     <div class="item-explain-box">

@@ -33,6 +33,8 @@ class SellItemsController < ApplicationController
     @buy_item = BuyItem.find(params[:buy_item_id])
     if user_signed_in? && current_user.id == @buy_item.user_id
         redirect_to root_path
+    elsif user_signed_in? && @buy_item.sell_item != nil
+        redirect_to root_path
     end
   end
 
