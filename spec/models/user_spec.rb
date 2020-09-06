@@ -13,8 +13,8 @@ RSpec.describe User, type: :model do
     end
 
     it 'passwordが６文字以上で登録できる' do
-      @user.password = '123456'
-      @user.password_confirmation = '123456'
+      @user.password = '123456aiu'
+      @user.password_confirmation = '123456aiu'
       expect(@user).to be_valid
     end
 
@@ -79,12 +79,6 @@ RSpec.describe User, type: :model do
       another_user = FactoryBot.build(:user, email: @user.email)
       another_user.valid?
       expect(another_user.errors.full_messages).to include('Email has already been taken')
-    end
-
-    it 'emailが規則に則っていないと登録できない' do
-      @user.email = 'user@example,com'
-      expect(@user).to_not be_valid
-      expect(@user.errors[:email]).to include('is invalid')
     end
 
     it 'passwordとpassword_confirmationが一致しないと登録できない' do

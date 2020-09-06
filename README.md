@@ -36,17 +36,17 @@
 
 ## buy_items テーブル
 
-| Column        | Type       | Options                        |
-| ------------  | ---------- | ------------------------------ |
-| title         | string     | null: false                    |
-| content       | string     | null: false                    |
-| category      | integer    | null: false                    |
-| item_status   | integer    | null: false                    |
-| shipping_fee  | integer    | null: false                    |
-| shipping_orig | integer    | null: false                    |
-| shipping_days | integer    | null: false                    |
-| price         | integer    | null: false                    |
-| user_id       | integer    | null: false, foreign_key: true |
+| Column         | Type       | Options                        |
+| -------------- | ---------- | ------------------------------ |
+| title          | string     | null: false                    |
+| content        | string     | null: false                    |
+| category_id    | integer    | null: false                    |
+| item_status_id | integer    | null: false                    |
+|shipping_fee_id | integer    | null: false                    |
+|shipping_orig_id| integer    | null: false                    |
+|shipping_days_id| integer    | null: false                    |
+| price          | integer    | null: false                    |
+| user_id        | integer    | null: false, foreign_key: true |
 
 
 ### Association
@@ -61,7 +61,7 @@
 | Column        | Type       | Options                        |
 | ------------  | ---------- | ------------------------------ |
 | postal_code   | string     | null: false                    |
-| prefecture    | integer    | null: false                    |
+| prefecture_id | integer    | null: false                    |
 | city          | string     | null: false                    |
 | address_other | string     | null: false                    |
 | building_name | string     | null: true                     |

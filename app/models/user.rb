@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :buy_items
+  has_many :sell_items
 
   with_options presence: true do
     validates :name
