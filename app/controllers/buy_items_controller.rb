@@ -6,7 +6,7 @@ class BuyItemsController < ApplicationController
     @buy_items = BuyItem.order('created_at DESC')
     @sell_item = SellitemAddress.new(params[:sell_item_id])
   end
-  
+
   def new
     @buy_item = BuyItem.new
   end
@@ -43,7 +43,7 @@ end
   def edit
     redirect_to root_path unless current_user.id == @buy_item.user_id
   end
-  
+
   private
 
   def buy_item_params
