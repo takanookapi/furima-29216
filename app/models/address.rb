@@ -8,4 +8,5 @@ class Address < ApplicationRecord
   end
 
   belongs_to :sell_item
+  
 end
