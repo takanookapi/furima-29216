@@ -26,7 +26,7 @@
     </div>
 
     <%# ログインしているユーザと出品しているユーザが同一人物である時、商品の編集と削除を表示にしましょう%>
-  <% if user_signed_in? && current_user.id == @buy_item.user_id %>
+  <% if user_signed_in? && current_user.id == @buy_item.user_id && @buy_item.sell_item == nil%>
     <%= link_to '商品の編集', edit_buy_item_path(@buy_item.id), class: "item-red-btn" %>
     <p class='or-text'>or</p>
     <%= link_to '削除', buy_item_path(@buy_item.id), method: :delete, class:'item-destroy' %>
