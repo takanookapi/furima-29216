@@ -13,7 +13,7 @@ RSpec.describe BuyItem, type: :model do
       expect(@buy_item).to be_valid
     end
 
-    # 出品がうまくいく時
+    # 出品がうまくいかない時
 
     it '画像が空だと登録できない' do
       @buy_item.image = nil
