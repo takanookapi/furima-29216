@@ -59,15 +59,16 @@
 
 ## address テーブル
 
-| Column        | Type       | Options                        |
-| ------------  | ---------- | ------------------------------ |
-| postal_code   | string     | null: false                    |
-| prefecture_id | integer    | null: false                    |
-| city          | string     | null: false                    |
-| address_other | string     | null: false                    |
-| building_name | string     | null: true                     |
-| telephone_num | string     | null: false                    |
-| sell_item_id  | integer    | null: false, foreign_key: true |
+| Column          | Type       | Options                        |
+| --------------- | ---------- | ------------------------------ |
+| postal_code     | string     | null: false                    |
+|shipping_orig_id | integer    | null: false                    |
+| city            | string     | null: false                    |
+| address_other   | string     | null: false                    |
+| building_name   | string     | null: true                     |
+| telephone_num   | string     | null: false                    |
+| sell_item_id    | integer    | null: false, foreign_key: true |
+
 
 ### Association
 
