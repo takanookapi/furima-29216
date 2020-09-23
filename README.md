@@ -69,6 +69,7 @@
 | telephone_num   | string     | null: false                    |
 | sell_item_id    | integer    | null: false, foreign_key: true |
 
+
 ### Association
 
 - belongs_to :sell_item
