@@ -83,6 +83,4 @@ RSpec.describe BuyItem, type: :model do
   end
 end
 
-# nilと""の違い
-# いつでもテストコード起動のコピペ用
 # bundle exec rspec spec/models/buy_item_spec.rb
